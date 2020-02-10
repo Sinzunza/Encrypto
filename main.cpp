@@ -58,7 +58,7 @@ int gcd (int a, int b){
     }
     return gcd(a-b,b);
 }
-//simplifies modding numbers to the power of several hundred digits if needed
+//simplifies modding numbers to the power of several dozen digits if needed
 int modBigNumber(unsigned long long int number, int power, int modder){
     vector<int> leftOvers;
     while(power > 1){
