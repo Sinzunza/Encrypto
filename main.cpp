@@ -160,52 +160,52 @@ void decrypt(){
 
 int main(){
 
-char choice;
-bool isValidChoice = false;
-unsigned long long int tempN = 1;
-unsigned long long int tempE = 1;
-string tempMessage;
+    char choice;
+    bool isValidChoice = false;
+    unsigned long long int tempN = 1;
+    unsigned long long int tempE = 1;
+    string tempMessage;
 
-while(!isValidN(tempN)){
-    cout << "Enter a number for n greater than 127: ";
-    cin >> tempN;
-    if (!isValidN(tempN)){
-        cout << "Invalid n!" << endl;
-    }
-}
-
-while(!isValidE(tempE)){
-    cout << "Enter a number for e: ";
-    cin >> tempE;
-    if (!isValidE(tempE)){
-        cout << "Invalid e!" << endl;
-    }
-}
-
-while(!isValidChoice) {
-    cout << "Enter 'e' for encryption or 'd' for decryption: ";
-    cin >> choice;
-    if(choice == 'e' || choice == 'd'){
-        isValidChoice = true;
-    }
-    else {
-        cout << "Invalid choice!" << endl;
+    while(!isValidN(tempN)){
+        cout << "Enter a number for n greater than 127: ";
+        cin >> tempN;
+        if (!isValidN(tempN)){
+            cout << "Invalid n!" << endl;
+        }
     }
 
-}
+    while(!isValidE(tempE)){
+        cout << "Enter a number for e: ";
+        cin >> tempE;
+        if (!isValidE(tempE)){
+            cout << "Invalid e!" << endl;
+        }
+    }
 
-if(choice == 'e'){
-    cout << "Type message to encrypt: ";
-    fflush(stdin);
-    getline(cin, tempMessage);
-    encrypt(tempMessage);
-    cout << "Message encrypted." << endl;
-}
-else if (choice == 'd'){
-    decrypt();
-    cout << "Message decrypted." << endl;
-}
+    while(!isValidChoice) {
+        cout << "Enter 'e' for encryption or 'd' for decryption: ";
+        cin >> choice;
+        if(choice == 'e' || choice == 'd'){
+            isValidChoice = true;
+        }
+        else {
+            cout << "Invalid choice!" << endl;
+        }
 
-return 0;
+    }
+
+    if(choice == 'e'){
+        cout << "Type message to encrypt: ";
+        fflush(stdin);
+        getline(cin, tempMessage);
+        encrypt(tempMessage);
+        cout << "Message encrypted." << endl;
+    }
+    else if (choice == 'd'){
+        decrypt();
+        cout << "Message decrypted." << endl;
+    }
+
+    return 0;
 
 }
