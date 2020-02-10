@@ -1,1 +1,2 @@
-# RSA-Cryptosystem
+# RSA Cryptosystem
+This program is capable of encrypting and decrypting messages using the RSA Cryptosystem. It can handle e and N values dozens of digits long. Messages are encrypted and decrypted into seperate files.
