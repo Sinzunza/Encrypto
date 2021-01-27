@@ -12,6 +12,8 @@ void setRSAKeys(rsaCrypto &encrypto);
 
 int main(){
 
+    rsaCrypto encrypto;
+
     while (true){
 
         string buffer;
@@ -30,14 +32,12 @@ int main(){
 
         switch (choice){
             case 'e': {
-                rsaCrypto encrypto;
                 setRSAKeys(encrypto);
                 encrypto.encrypt();
                 cout << "Message encrypted.\n" << endl;
                 break;
                 }
             case 'd': {
-                rsaCrypto encrypto;
                 setRSAKeys(encrypto);
                 encrypto.decrypt();
                 cout << "Message decrypted.\n" << endl;

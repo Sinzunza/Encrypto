@@ -55,7 +55,7 @@ void rsaCrypto::encrypt(){
     string message;
 
     while(getline(decryptedFileIn,fileString)){
-        message += fileString;
+        message += fileString + "\n";
     }
     decryptedFileIn.close();
 
