@@ -54,6 +54,7 @@ void rsaCrypto::encrypt(){
     ofstream encryptedFileOut("encrypted.txt");
     string fileString;
     string message;
+    unsigned long long int currentNum;
 
     while(getline(decryptedFileIn,fileString)){
         message += fileString + "\n";
