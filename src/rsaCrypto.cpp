@@ -4,13 +4,14 @@
 #include <fstream>
 #include <sstream>
 
+#include <iostream>
 using namespace std;
 
 rsaCrypto::rsaCrypto()
 {
-    unsigned long long int N = 0;
-    unsigned long long int E = 0;
-    unsigned long long int phiN = 0;
+    N = 0;
+    E = 0;
+    phiN = 0;
 }
 
 void rsaCrypto::setN(unsigned long long int N){
@@ -50,17 +51,11 @@ bool rsaCrypto::isValidE(unsigned long long int number){
 
 void rsaCrypto::encrypt(){
     ifstream decryptedFileIn("decrypted.txt");
-    stringstream virtualStream;
     string fileString;
-    char currentChar;
     string message;
 
     while(getline(decryptedFileIn,fileString)){
-        virtualStream << fileString;
-        while (virtualStream >> currentChar){
-            message.push_back(currentChar);
-        }
-        virtualStream.clear();
+        message += fileString;
     }
     decryptedFileIn.close();
 

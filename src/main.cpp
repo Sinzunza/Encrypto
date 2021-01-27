@@ -4,10 +4,11 @@
 
 #include "../header/rsaCrypto.h"
 #include "../header/primes.h"
+#include "../header/mathFncts.h"
 
 using namespace std;
 
-void setRSAKeys(rsaCrypto encrypto);
+void setRSAKeys(rsaCrypto &encrypto);
 
 int main(){
 
@@ -23,7 +24,7 @@ int main(){
                 break;
             }
             else {
-                cout << "Invalid choice!" << endl;
+                cout << "Invalid input: Choose between given choices." << endl;
             }
         }
 
@@ -54,15 +55,18 @@ int main(){
 
 }
 
-void setRSAKeys(rsaCrypto encrypto){
+void setRSAKeys(rsaCrypto &encrypto){
     unsigned long long int N = 1;
     unsigned long long int E = 1;
 
     while(true){
-        cout << "Enter a number for n greater than 127: ";
+        cout << "Enter a valid n greater than 127: ";
         cin >> N;
-        if (!encrypto.isValidN(N)){
-            cout << "Invalid n!" << endl;
+        if (N <= 127) {
+            cout << "Invalid input: N has to be greater than 127." << endl;
+        }
+        else if (!encrypto.isValidN(N)){
+            cout << "Invalid input: Unacceptable N value, refer to RSA Cryptosystem for acceptable values." << endl;
         }
         else {
             encrypto.setN(N);
@@ -71,10 +75,10 @@ void setRSAKeys(rsaCrypto encrypto){
     }
 
     while(true){
-        cout << "Enter a number for e: ";
+        cout << "Enter a valid e: ";
         cin >> E;
         if (!encrypto.isValidE(E)){
-            cout << "Invalid e!" << endl;
+            cout << "Invalid input: Unacceptable E value, refer to RSA Cryptosystem for acceptable values." << endl;
         }
         else {
             encrypto.setE(E);
@@ -82,5 +86,6 @@ void setRSAKeys(rsaCrypto encrypto){
         }
     }
 
-    fflush(stdin);
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }

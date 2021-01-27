@@ -1,10 +1,7 @@
 #ifndef RSACRYPTO_H
 #define RSACRYPTO_H
 
-#include <iostream>
 #include "primes.h"
-
-using namespace std;
 
 class rsaCrypto
 {
