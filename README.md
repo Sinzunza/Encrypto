@@ -1,8 +1,6 @@
 # Encrypto
 This program is capable of encrypting and decrypting messages using the RSA Cryptosystem method. It can encrypt and decrypt messages consisting of any ASCII character. The system can handle key values dozens of digits long.
 
-<br/>
-
 ## Usage
 **Encryption:** Place text inside the decrypted.txt file. After encryption is done, the encrypted text will be inside the encryption.txt file.
 
