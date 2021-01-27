@@ -51,14 +51,20 @@ bool rsaCrypto::isValidE(unsigned long long int number){
 
 void rsaCrypto::encrypt(){
     ifstream decryptedFileIn("decrypted.txt");
+    ofstream encryptedFileOut("encrypted.txt");
     string fileString;
     string message;
 
     while(getline(decryptedFileIn,fileString)){
         message += fileString + "\n";
+        for(unsigned long long int i = 0; i < message.size(); i++){
+        currentNum = mathFncts().modBigNumber(message.at(i), E, N);
+        encryptedFileOut << currentNum << " ";
+        }
     }
     decryptedFileIn.close();
-
+    encryptedFileOut.close();
+/*
     vector <unsigned long long int> encryptedMessage;
     unsigned long long int currentNum;
     for(unsigned long long int i = 0; i < message.size(); i++){
@@ -71,7 +77,8 @@ void rsaCrypto::encrypt(){
     for (unsigned long long int i = 0; i < encryptedMessage.size(); i++){
         encryptedFileOut << encryptedMessage.at(i) << " ";
     }
-    encryptedFileOut.close();
+    encryptedFileOut.close(); 
+    */
 }
 
 unsigned long long int rsaCrypto::dBreaker(unsigned long long int eKey, unsigned long long int NKey){
