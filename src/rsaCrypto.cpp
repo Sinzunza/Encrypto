@@ -65,21 +65,6 @@ void rsaCrypto::encrypt(){
     }
     decryptedFileIn.close();
     encryptedFileOut.close();
-/*
-    vector <unsigned long long int> encryptedMessage;
-    unsigned long long int currentNum;
-    for(unsigned long long int i = 0; i < message.size(); i++){
-        currentNum = message.at(i);
-        currentNum = mathFncts().modBigNumber(currentNum, E, N);
-        encryptedMessage.push_back(currentNum);
-    }
-    //output encrypted message to file
-    ofstream encryptedFileOut("encrypted.txt");
-    for (unsigned long long int i = 0; i < encryptedMessage.size(); i++){
-        encryptedFileOut << encryptedMessage.at(i) << " ";
-    }
-    encryptedFileOut.close(); 
-    */
 }
 
 unsigned long long int rsaCrypto::dBreaker(unsigned long long int eKey, unsigned long long int NKey){
@@ -93,24 +78,26 @@ unsigned long long int rsaCrypto::dBreaker(unsigned long long int eKey, unsigned
 void rsaCrypto::decrypt(){
     unsigned long long int D = dBreaker(E,N);
     ifstream encryptedFileIn("encrypted.txt");
+    ofstream decryptedFileOut("decrypted.txt");
     stringstream virtualStream;
     string fileString;
     unsigned long long int currentNum;
     char currentChar;
-    string decryptedMessage;
+//    string decryptedMessage;
 
     while(getline(encryptedFileIn,fileString)){
         virtualStream << fileString;
         while (virtualStream >> currentNum){
-            currentNum = mathFncts().modBigNumber(currentNum, D, N);
-            currentChar = currentNum;
-            decryptedMessage.push_back(currentChar);
+            currentChar = mathFncts().modBigNumber(currentNum, D, N);
+           // decryptedMessage.push_back(currentChar);
+            decryptedFileOut << currentChar;
         }
         virtualStream.clear();
     }
     encryptedFileIn.close();
+     decryptedFileOut.close();
     //output decrypted message to file
-    ofstream decryptedFileOut("decrypted.txt");
+ /*   ofstream decryptedFileOut("decrypted.txt");
     decryptedFileOut << decryptedMessage;
-    decryptedFileOut.close();
+    decryptedFileOut.close(); */
 }
