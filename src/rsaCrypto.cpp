@@ -79,6 +79,7 @@ void rsaCrypto::decrypt(){
     ifstream encryptedFileIn("encrypted.txt");
     ofstream decryptedFileOut("decrypted.txt");
     unsigned long long int currentNum;
+    sstream virtual stream;
     string fileString;
     char currentChar;
 
