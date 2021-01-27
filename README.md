@@ -9,14 +9,10 @@ git clone https://github.com/Sinzunza93/Encrypto.git
 cd Encrypto
 cmake . 
 make
-```
-
-### Usage
-To run the program type the following command:
-```
 ./Encrypto
 ```
 
+### Usage
 **Encryption:** Place normal text inside the decrypted.txt file. After encryption is done, the encrypted text will be inside the encryption.txt file.
 
 **Decryption:** Place encrypted text inside the encrypted.txt file. After decryption is done, the decrypted text will be inside the decryption.txt file.
