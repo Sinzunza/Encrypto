@@ -52,9 +52,9 @@ bool rsaCrypto::isValidE(unsigned long long int number){
 void rsaCrypto::encrypt(){
     ifstream decryptedFileIn("decrypted.txt");
     ofstream encryptedFileOut("encrypted.txt");
+    unsigned long long int currentNum;
     string fileString;
     string message;
-    unsigned long long int currentNum;
 
     while(getline(decryptedFileIn,fileString)){
         fileString += "\n";
@@ -79,25 +79,18 @@ void rsaCrypto::decrypt(){
     unsigned long long int D = dBreaker(E,N);
     ifstream encryptedFileIn("encrypted.txt");
     ofstream decryptedFileOut("decrypted.txt");
-    stringstream virtualStream;
-    string fileString;
     unsigned long long int currentNum;
+    string fileString;
     char currentChar;
-//    string decryptedMessage;
 
     while(getline(encryptedFileIn,fileString)){
         virtualStream << fileString;
         while (virtualStream >> currentNum){
             currentChar = mathFncts().modBigNumber(currentNum, D, N);
-           // decryptedMessage.push_back(currentChar);
             decryptedFileOut << currentChar;
         }
         virtualStream.clear();
     }
     encryptedFileIn.close();
-     decryptedFileOut.close();
-    //output decrypted message to file
- /*   ofstream decryptedFileOut("decrypted.txt");
-    decryptedFileOut << decryptedMessage;
-    decryptedFileOut.close(); */
+    decryptedFileOut.close();
 }
