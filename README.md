@@ -9,6 +9,5 @@ This program is capable of encrypting and decrypting messages using the RSA Cryp
 
   
 Sergio Inzunza
-  
 01/20
  
