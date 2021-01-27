@@ -57,7 +57,7 @@ void rsaCrypto::encrypt(){
     unsigned long long int currentNum;
 
     while(getline(decryptedFileIn,fileString)){
-        message += fileString + "\n";
+        fileString += "\n";
         for(unsigned long long int i = 0; i < message.size(); i++){
         currentNum = mathFncts().modBigNumber(message.at(i), E, N);
         encryptedFileOut << currentNum << " ";
