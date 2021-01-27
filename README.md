@@ -1,5 +1,5 @@
 # Encrypto
-This program is capable of encrypting and decrypting messages using the RSA Cryptosystem method. It can encrypt and decrypt messages consisting of any ASCII character. The system can handle key values dozens of digits long.
+This program is capable of encrypting and decrypting text using the RSA Cryptosystem method. It can encrypt and decrypt text consisting of any ASCII character. The system can handle key values dozens of digits long.
 
 
 ### Installation
