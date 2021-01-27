@@ -58,8 +58,8 @@ void rsaCrypto::encrypt(){
 
     while(getline(decryptedFileIn,fileString)){
         fileString += "\n";
-        for(unsigned long long int i = 0; i < message.size(); i++){
-        currentNum = mathFncts().modBigNumber(message.at(i), E, N);
+        for(unsigned long long int i = 0; i < fileString.size(); i++){
+        currentNum = mathFncts().modBigNumber(fileString.at(i), E, N);
         encryptedFileOut << currentNum << " ";
         }
     }
