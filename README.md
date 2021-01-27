@@ -12,11 +12,13 @@ make
 ```
 
 ### Usage
-Run the following command:
+To run the program type the following command:
 ```
 ./Encrypto
 ```
+
 **Encryption:** Place normal text inside the decrypted.txt file. After encryption is done, the encrypted text will be inside the encryption.txt file.
+
 **Decryption:** Place encrypted text inside the encrypted.txt file. After decryption is done, the decrypted text will be inside the decryption.txt file.
 
 <br/><br/>
