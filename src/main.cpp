@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <limits>
 
-#include "rsaCrypto.h"
-#include "primes.h"
+#include "../header/rsaCrypto.h"
+#include "../header/primes.h"
 
 using namespace std;
 

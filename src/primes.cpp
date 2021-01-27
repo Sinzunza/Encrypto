@@ -1,4 +1,4 @@
-#include "primes.h"
+#include "../header/primes.h"
 
 primes::primes()
 {

@@ -1,5 +1,5 @@
-#include "rsaCrypto.h"
-#include "mathFncts.h"
+#include "../header/rsaCrypto.h"
+#include "../header/mathFncts.h"
 #include <cmath>
 #include <fstream>
 #include <sstream>
