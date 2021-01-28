@@ -12,7 +12,7 @@ void setRSAKeys(rsaCrypto &encrypto);
 
 int main(){
     
-    cout << "\n\n                    **** ENCRYPTO ****" << endl;
+    cout << "\n                    **** ENCRYPTO ****\n" << endl;
 
     rsaCrypto encrypto;
 
