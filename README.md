@@ -5,7 +5,7 @@ This program is capable of encrypting and decrypting text using the RSA Cryptosy
 ### Installation
 Open the terminal and run these commands:
 ```
-git clone https://github.com/Sinzunza93/Encrypto.git
+git clone https://github.com/Sinzunza/Encrypto.git
 cd Encrypto
 cmake . 
 make
