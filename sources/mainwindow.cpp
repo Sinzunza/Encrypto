@@ -59,11 +59,10 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::on_actionQuitTriggered() {
-
+    // delete temporary local files
     remove("encrypted.txt");
     remove("decrypted.txt");
     this->close();
-
 }
 
 void MainWindow::validateKeysClicked(){
