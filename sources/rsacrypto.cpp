@@ -49,11 +49,13 @@ bool rsaCrypto::isValidE(unsigned long long int number){
 }
 
 void rsaCrypto::encrypt(string fileIn){
+    // set input and output files
     ifstream fileInStream(fileIn);
     ofstream fileOutStream("encrypted.txt");
     unsigned long long int currentNum;
     string fileString;
-
+    
+    // extract from input file, one line at a time and then a char at a time, and encrypt each character
     while(getline(fileInStream,fileString)){
         fileString += "\n";
         for(unsigned long long int i = 0; i < fileString.size(); i++){
@@ -75,13 +77,15 @@ unsigned long long int rsaCrypto::dBreaker(unsigned long long int eKey, unsigned
 
 void rsaCrypto::decrypt(string fileIn){
     unsigned long long int D = dBreaker(E,N);
+    // set input and output files
     ifstream fileInStream(fileIn);
     ofstream fileOutStream("decrypted.txt");
     unsigned long long int currentNum;
     stringstream virtualStream;
     string fileString;
     char currentChar;
-
+    
+    // extract from input file, one line at a time and then an encrytped value at a time, and decrypt each value
     while(getline(fileInStream,fileString)){
         virtualStream << fileString;
         while (virtualStream >> currentNum){
