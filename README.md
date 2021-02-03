@@ -6,7 +6,7 @@ This program is capable of encrypting and decrypting text using the RSA Cryptosy
 
 This program uses the Qt framework, therefore Qt is needed to run.
 
-<br/><br/>
+<br/>
   
 Sergio Inzunza
 
