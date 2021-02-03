@@ -4,7 +4,7 @@ This program is user friendly encryption system that is capable of encrypting an
 
 ### Installation
 
-This program uses the Qt framework, therefore Qt is needed to run.
+This program uses the Qt framework for the gui, therefore Qt is needed to run.
 
 <br/>
   
