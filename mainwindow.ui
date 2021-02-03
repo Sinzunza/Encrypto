@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Encrypto</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color:rgb(227, 227, 227);</string>
@@ -357,22 +357,6 @@ text-decoration: underline;</string>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>795</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuEncrypto">
-    <property name="title">
-     <string>Encrypto</string>
-    </property>
-   </widget>
-   <addaction name="menuEncrypto"/>
-  </widget>
  </widget>
  <resources/>
  <connections/>
