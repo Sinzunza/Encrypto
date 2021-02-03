@@ -1,6 +1,7 @@
 #ifndef RSACRYPTO_H
 #define RSACRYPTO_H
 
+#include <iostream>
 #include "primes.h"
 
 class rsaCrypto
@@ -11,8 +12,8 @@ class rsaCrypto
         void setE(unsigned long long int E);
         bool isValidN(unsigned long long int number);
         bool isValidE(unsigned long long int number);
-        void encrypt();
-        void decrypt();
+        void encrypt(string fileIn);
+        void decrypt(string fileOut);
 
     protected:
 

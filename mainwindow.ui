@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>795</width>
+    <height>576</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(227, 227, 227);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(165, 221, 255);</string>
+   </property>
+   <widget class="QPushButton" name="btn_Encrypt">
+    <property name="geometry">
+     <rect>
+      <x>295</x>
+      <y>270</y>
+      <width>120</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(220, 220, 220);</string>
+    </property>
+    <property name="text">
+     <string>Encryption</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_Decrypt">
+    <property name="geometry">
+     <rect>
+      <x>295</x>
+      <y>380</y>
+      <width>120</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(220, 220, 220);</string>
+    </property>
+    <property name="text">
+     <string>Decryption</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_SelectEncrFile">
+    <property name="geometry">
+     <rect>
+      <x>165</x>
+      <y>280</y>
+      <width>75</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(220, 220, 220);</string>
+    </property>
+    <property name="text">
+     <string>Select File</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_SelectDecrFile">
+    <property name="geometry">
+     <rect>
+      <x>165</x>
+      <y>390</y>
+      <width>75</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(220, 220, 220);</string>
+    </property>
+    <property name="text">
+     <string>Select File</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="led_nKey">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>80</y>
+      <width>170</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="led_eKey">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>130</y>
+      <width>170</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_EnterNVal">
+    <property name="geometry">
+     <rect>
+      <x>137</x>
+      <y>80</y>
+      <width>135</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Enter value n:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_EnterEVal">
+    <property name="geometry">
+     <rect>
+      <x>137</x>
+      <y>130</y>
+      <width>135</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Enter value e:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_DownloadEncrFile">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>281</y>
+      <width>97</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(220, 220, 220);</string>
+    </property>
+    <property name="text">
+     <string>Download File</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_DownloadDecrFile">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>391</y>
+      <width>97</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(220, 220, 220);</string>
+    </property>
+    <property name="text">
+     <string>Download File</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_ValidateKeys">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>180</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(220, 220, 220);</string>
+    </property>
+    <property name="text">
+     <string>Validate Keys</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_ValidationMessage">
+    <property name="geometry">
+     <rect>
+      <x>415</x>
+      <y>180</y>
+      <width>250</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_nKey">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>80</y>
+      <width>150</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_eKey">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>130</y>
+      <width>150</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_SelectedEncrFile">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>280</y>
+      <width>120</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color: rgb(0, 0, 255);</string>
+    </property>
+    <property name="text">
+     <string>file.txt</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_SelectedDecrFile">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>390</y>
+      <width>120</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 255);
+text-decoration: underline;</string>
+    </property>
+    <property name="text">
+     <string>file.txt</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_EncrFile">
+    <property name="geometry">
+     <rect>
+      <x>455</x>
+      <y>280</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color: rgb(0, 0, 255);</string>
+    </property>
+    <property name="text">
+     <string>encrypted.txt</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_DecrFile">
+    <property name="geometry">
+     <rect>
+      <x>455</x>
+      <y>390</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+color: rgb(0, 0, 255);</string>
+    </property>
+    <property name="text">
+     <string>decrypted.txt</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_CurrentKeys">
+    <property name="geometry">
+     <rect>
+      <x>497</x>
+      <y>40</y>
+      <width>140</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
+text-decoration: underline;</string>
+    </property>
+    <property name="text">
+     <string>Current Keys</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_Keys">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>45</y>
+      <width>50</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Keys</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>795</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuEncrypto">
+    <property name="title">
+     <string>Encrypto</string>
+    </property>
+   </widget>
+   <addaction name="menuEncrypto"/>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

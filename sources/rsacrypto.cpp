@@ -1,10 +1,9 @@
-#include "../header/rsaCrypto.h"
-#include "../header/mathFncts.h"
+#include "..\headers\rsaCrypto.h"
+#include "..\headers\mathFncts.h"
 #include <cmath>
 #include <fstream>
 #include <sstream>
 
-#include <iostream>
 using namespace std;
 
 rsaCrypto::rsaCrypto()
@@ -49,21 +48,21 @@ bool rsaCrypto::isValidE(unsigned long long int number){
     }
 }
 
-void rsaCrypto::encrypt(){
-    ifstream decryptedFileIn("decrypted.txt");
-    ofstream encryptedFileOut("encrypted.txt");
+void rsaCrypto::encrypt(string fileIn){
+    ifstream fileInStream(fileIn);
+    ofstream fileOutStream("encrypted.txt");
     unsigned long long int currentNum;
     string fileString;
-    
-    while(getline(decryptedFileIn,fileString)){
+
+    while(getline(fileInStream,fileString)){
         fileString += "\n";
         for(unsigned long long int i = 0; i < fileString.size(); i++){
         currentNum = mathFncts().modBigNumber(fileString.at(i), E, N);
-        encryptedFileOut << currentNum << " ";
+        fileOutStream << currentNum << " ";
         }
     }
-    decryptedFileIn.close();
-    encryptedFileOut.close();
+    fileInStream.close();
+    fileOutStream.close();
 }
 
 unsigned long long int rsaCrypto::dBreaker(unsigned long long int eKey, unsigned long long int NKey){
@@ -74,23 +73,23 @@ unsigned long long int rsaCrypto::dBreaker(unsigned long long int eKey, unsigned
     }
 }
 
-void rsaCrypto::decrypt(){
+void rsaCrypto::decrypt(string fileIn){
     unsigned long long int D = dBreaker(E,N);
-    ifstream encryptedFileIn("encrypted.txt");
-    ofstream decryptedFileOut("decrypted.txt");
+    ifstream fileInStream(fileIn);
+    ofstream fileOutStream("decrypted.txt");
     unsigned long long int currentNum;
     stringstream virtualStream;
     string fileString;
     char currentChar;
 
-    while(getline(encryptedFileIn,fileString)){
+    while(getline(fileInStream,fileString)){
         virtualStream << fileString;
         while (virtualStream >> currentNum){
             currentChar = mathFncts().modBigNumber(currentNum, D, N);
-            decryptedFileOut << currentChar;
+            fileOutStream << currentChar;
         }
         virtualStream.clear();
     }
-    encryptedFileIn.close();
-    decryptedFileOut.close();
+    fileInStream.close();
+    fileOutStream.close();
 }

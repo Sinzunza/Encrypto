@@ -1,4 +1,4 @@
-#include "../header/mathFncts.h"
+#include "..\headers\mathFncts.h"
 #include <vector>
 
 using namespace std;
