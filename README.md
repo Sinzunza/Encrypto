@@ -6,6 +6,9 @@ This program is user friendly encryption system that is capable of encrypting an
 
 This program uses the Qt framework for the gui, therefore Qt is needed to run.
 
+### Screenshot
+![](https://github.com/Sinzunza/Encrypto/blob/master/Encrypto%20Screenshot.png)
+
 <br/>
   
 Sergio Inzunza
