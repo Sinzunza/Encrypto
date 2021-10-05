@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QErrorMessage>
 #include <QRegularExpressionValidator>
+#include <QCloseEvent>
 
 using namespace std;
 
@@ -58,11 +59,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_actionQuitTriggered() {
+void MainWindow::closeEvent (QCloseEvent *event)
     // delete temporary local files
     remove("encrypted.txt");
     remove("decrypted.txt");
-    this->close();
+    event->accept();
 }
 
 void MainWindow::validateKeysClicked(){
@@ -160,6 +161,7 @@ void MainWindow::downloadEncrFileClicked(){
     out << in.rdbuf();
     out.close();
     in.close();
+    remove("encrypted.txt");
 }
 
 void MainWindow::downloadDecrFileClicked(){
@@ -173,4 +175,5 @@ void MainWindow::downloadDecrFileClicked(){
     out << in.rdbuf();
     out.close();
     in.close();
+    remove("decrypted.txt");
 }
