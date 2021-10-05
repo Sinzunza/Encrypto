@@ -20,7 +20,8 @@ public:
 
 
 private slots:
-    void on_actionQuitTriggered();
+
+    void closeEvent (QCloseEvent *event);
 
     //clicked
     void validateKeysClicked();
