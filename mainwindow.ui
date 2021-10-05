@@ -34,7 +34,7 @@
 background-color: rgb(220, 220, 220);</string>
     </property>
     <property name="text">
-     <string>Encryption</string>
+     <string>Encrypt</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_Decrypt">
@@ -51,7 +51,7 @@ background-color: rgb(220, 220, 220);</string>
 background-color: rgb(220, 220, 220);</string>
     </property>
     <property name="text">
-     <string>Decryption</string>
+     <string>Decrypt</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_SelectEncrFile">
