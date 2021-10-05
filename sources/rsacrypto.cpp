@@ -73,6 +73,7 @@ unsigned long long int rsaCrypto::dBreaker(unsigned long long int eKey, unsigned
             return i;
         }
     }
+    return 0;
 }
 
 void rsaCrypto::decrypt(string fileIn){
