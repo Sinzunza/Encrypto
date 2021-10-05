@@ -4,10 +4,11 @@ This program is user friendly encryption system that is capable of encrypting an
 
 ### Installation
 
-This program uses the Qt framework for the gui, therefore Qt is needed to run.
+1.) Download this repo.
+2.) Run the file Encrypto-Windows-64-bit/Encrypto.exe
 
 ### Screenshot
-![](https://github.com/Sinzunza/Encrypto/blob/master/Encrypto%20Screenshot.png)
+![](https://github.com/Sinzunza/Encrypto/blob/master/Encrypto_Screenshot.jpg)
 
 <br/>
   
