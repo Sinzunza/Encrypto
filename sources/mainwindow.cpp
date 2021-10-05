@@ -44,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->btn_DownloadEncrFile->hide();
     ui->btn_DownloadDecrFile->hide();
 
-    //connect buttons to functions
+    // connect buttons to functions
     connect(ui->btn_ValidateKeys, SIGNAL(released()), this, SLOT(validateKeysClicked()));
     connect(ui->btn_Encrypt, SIGNAL(released()), this, SLOT(encryptClicked()));
     connect(ui->btn_Decrypt, SIGNAL(released()), this, SLOT(decryptClicked()));
