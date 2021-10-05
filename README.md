@@ -4,7 +4,7 @@ This program is user friendly encryption system that is capable of encrypting an
 
 ### Installation
 
-1.) Download this repo.
+1.) Download this repo \
 2.) Run the file Encrypto-Windows-64-bit/Encrypto.exe
 
 ### Screenshot
