@@ -4,8 +4,14 @@ This program is user friendly encryption system that is capable of encrypting an
 
 ### Install & Run
 
-1.) Download this repo \
-2.) Run the file Windows-64-bit/Encrypto.exe
+Open a command line and run the following commands:
+```
+git clone https://github.com/Sinzunza/Encrypto.git
+cd Encrypto
+git checkout tags/Windows-64-bit
+cd Windows-64-bit
+Encrypto.exe
+```
 
 ### Screenshot
 ![](https://github.com/Sinzunza/Encrypto/blob/master/Encrypto_Screenshot.jpg)
