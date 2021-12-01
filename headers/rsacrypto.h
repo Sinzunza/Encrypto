@@ -4,8 +4,8 @@
 #include <iostream>
 #include "primes.h"
 
-class rsaCrypto
-{
+class rsaCrypto {
+    
     public:
         rsaCrypto();
         void setN(unsigned long long int N);
