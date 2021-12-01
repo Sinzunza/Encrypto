@@ -5,8 +5,8 @@
 
 using namespace std;
 
-class primes
-{
+class primes {
+    
     public:
         primes();
         vector <unsigned long long int> getPrimeNumbers();
