@@ -54,34 +54,33 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->btn_DownloadDecrFile, SIGNAL(released()), this, SLOT(downloadDecrFileClicked()));
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete ui;
 }
 
-void MainWindow::closeEvent (QCloseEvent *event)
+void MainWindow::closeEvent (QCloseEvent *event) {
     // delete temporary local files
     remove("encrypted.txt");
     remove("decrypted.txt");
     event->accept();
 }
 
-void MainWindow::validateKeysClicked(){
+void MainWindow::validateKeysClicked() {
     // extract the key values from the input boxes
     QString nKeyString = ui->led_nKey->text();
     nKey = nKeyString.toULongLong();
     QString eKeyString = ui->led_eKey->text();
     eKey = eKeyString.toULongLong();
     // check if keys are valid, if so then set the keys and output a success message, if not then output an error message
-    if(nKey < 128){
+    if (nKey < 128) {
         lblValidateKeys->setText("n Key must be greater than 127.");
     }
     else {
         bool isValidated = false;
-        if(encrypto.isValidN(nKey)){
+        if (encrypto.isValidN(nKey)) {
             unsigned long long int nKeyTemp = nKey;
             encrypto.setN(nKey);
-            if(encrypto.isValidE(eKey)){
+            if (encrypto.isValidE(eKey)) {
                 encrypto.setE(eKey);
                 lblValidateKeys->setText("Keys Successfully Validated !");
                 ui->lbl_CurrentKeys->show();
@@ -100,7 +99,7 @@ void MainWindow::validateKeysClicked(){
     }
 }
 
-void MainWindow::selectFileEncClicked(){
+void MainWindow::selectFileEncClicked() {
     // let user select a local .txt file to encrypt
     QString encrFileInQ = QFileDialog::getOpenFileName(this, "Open Text File", QDir::homePath(), "text files (*.txt)");
     encrFileIn = encrFileInQ.toStdString();
@@ -110,7 +109,7 @@ void MainWindow::selectFileEncClicked(){
     lblSelectedEncrFile->setText(fileInfo.fileName());
 }
 
-void MainWindow::selectFileDecClicked(){
+void MainWindow::selectFileDecClicked() {
     // let user select a local .txt file to decrypt        
     QString decrFileInQ = QFileDialog::getOpenFileName(this, "Open Text File", QDir::homePath(), "text files (*.txt)");
     decrFileIn = decrFileInQ.toStdString();
@@ -120,37 +119,37 @@ void MainWindow::selectFileDecClicked(){
     lblSelectedDecrFile->setText(fileInfo.fileName());
 }
 
-void MainWindow::encryptClicked(){
+void MainWindow::encryptClicked() {
     // encrypt the file if keys are validated and an input encrypted file has been selected
-    if(lblNKey->text().length() > 0 && encrFileIn.length() > 0){
+    if (lblNKey->text().length() > 0 && encrFileIn.length() > 0) {
         encrypto.encrypt(encrFileIn);
         lblEncrFile->show();
         ui->btn_DownloadEncrFile->show();
     }
-    else if (lblNKey->text().length() == 0){
+    else if (lblNKey->text().length() == 0) {
         QMessageBox::information(this, "Encryption Error", "No keys have been validated.");
     }
-    else if (encrFileIn.length() == 0){
+    else if (encrFileIn.length() == 0) {
         QMessageBox::information(this, "Encryption Error", "No file has been selected.");
     }
 }
 
-void MainWindow::decryptClicked(){
+void MainWindow::decryptClicked() {
     // decrypt the file if keys are validated and an input decrypted file has been selected
-    if(lblNKey->text().length() && decrFileIn.length() > 0){
+    if (lblNKey->text().length() && decrFileIn.length() > 0) {
         encrypto.decrypt(decrFileIn);
         lblDecrFile->show();
         ui->btn_DownloadDecrFile->show();
     }
-    else if (lblNKey->text().length() == 0){
+    else if (lblNKey->text().length() == 0) {
         QMessageBox::information(this, "Decryption Error", "No keys have been validated.");
     }
-    else if (decrFileIn.length() == 0){
+    else if (decrFileIn.length() == 0) {
         QMessageBox::information(this, "Decryption Error", "No file has been selected.");
     }
 }
 
-void MainWindow::downloadEncrFileClicked(){
+void MainWindow::downloadEncrFileClicked() {
     // let user download the encrypted file by first choosing a path and file name 
     QString fileName = QFileDialog::getSaveFileName(this, "Save File", QDir::homePath(), "text files (*.txt)");
     string fileSaved = fileName.toStdString();
@@ -164,7 +163,7 @@ void MainWindow::downloadEncrFileClicked(){
     remove("encrypted.txt");
 }
 
-void MainWindow::downloadDecrFileClicked(){
+void MainWindow::downloadDecrFileClicked() {
     // let user download the decrypted file by first choosing a path and file name
     QString fileName = QFileDialog::getSaveFileName(this, "Save File", QDir::homePath(), "text files (*.txt)");
     string fileSaved = fileName.toStdString();
