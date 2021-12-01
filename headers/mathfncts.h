@@ -2,8 +2,8 @@
 #define MATHFNCTS_H
 
 
-class mathFncts
-{
+class mathFncts {
+    
     public:
         mathFncts();
         static unsigned long long int gcd (unsigned long long int a, unsigned long long int b);
